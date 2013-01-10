@@ -1,0 +1,18 @@
+<table>
+	<tr>
+		<td>
+			Title
+		</td>
+		<td>
+			Sort Order
+		</td>
+	</tr>
+<% @products.each do |p| %>
+	<tr>
+	<td>
+		<%= link_to p.title, p %>
+	</td>
+	<td>
+		<%= p.sort %>
+	</td>
+<% end %>

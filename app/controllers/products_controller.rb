@@ -1,8 +1,11 @@
 class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
+
+  before_filter :display_sort, :only => [:new, :edit,:create ]
+  after_filter :update_sort, :only => [:update, :create]
   def index
-    @products = Product.all
+    @product = Product.first(:order => 'sort asc', :conditions => ["sort != 0 and active = ?", true])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -37,11 +40,22 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def buy
+    @product = Product.find(params[:id])
+    @product.quantity -= 1
+    @product.save
+    if @product.quantity <= 0
+      @product.active = false
+      @product.sort = 0
+      @product.save
+    end
+    redirect_to @product.url
+  end
+
   # POST /products
   # POST /products.json
   def create
     @product = Product.new(params[:product])
-
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
@@ -57,7 +71,7 @@ class ProductsController < ApplicationController
   # PUT /products/1.json
   def update
     @product = Product.find(params[:id])
-
+    @changed = @product.sort_changed?
     respond_to do |format|
       if @product.update_attributes(params[:product])
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
@@ -80,4 +94,30 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+  def display_sort
+    @products = Product.all
+  end
+
+  def update_sort
+    @conflict = false
+    @update = Product.where("sort >= ? and id <> ?", @product.sort, @product.id)
+    if Product.find_by_sort(@product.sort) != "[]"
+      @conflict = true
+    elsif @changed == true
+      @conflict = true
+    end
+      if @conflict == true
+        @hey = @product.sort
+        @update.each do |u|
+          @hey += 1
+          u.update_column(:sort, @hey)
+          u.save
+        end
+      end
+    end
+    
 end
+

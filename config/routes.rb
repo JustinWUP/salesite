@@ -2,6 +2,8 @@ Salesite::Application.routes.draw do
 
   resources :products
 
+  match 'products/buy/:id' => 'products#buy', :as => 'buy'
+
 
   root :to => "products#index"
 
