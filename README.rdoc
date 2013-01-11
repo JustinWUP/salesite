@@ -1,5 +1,5 @@
 # Sales on Rails
 
-##Limited Quantity Product Promotional Sales Site
+## Limited Quantity Product Promotional Sales Site
 
 This is a rails based product promotion project that allows for simple product and quantity management. Products can be added and given a sort order. The site will display one product at a time (the one first in the sort order) and when quantity runs out, that product will swap out with the next active product with quantity in the sort, sort of woot.com style. Additional products can be added in the middle of the sort and products with a sort higher than the new product will be bumped back automatically.
