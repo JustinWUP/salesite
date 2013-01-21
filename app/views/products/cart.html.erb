@@ -1,0 +1,9 @@
+<form name="product<%= @product.sku %>" method="POST" action="http://www.shoparteffect.com/storeshop/std/add-to-bag.asp">
+	<input type="hidden" name="pfid" value="<%= @product.sku %>">
+	<input type="hidden" name="addto" value="shoppingbag">
+	<input type="hidden" name="quantity" value="1" size="5" align="left" class="prodformfield" id="product-quantity">
+<!-- 	<input type="image" src="http://www.shoparteffect.com/images/buttonaddtobag0.gif" width="109" height="35" border="0" alt="Add to Shopping Bag" id="addtobag" name="addtobag" vspace="10"><br> -->
+</form>
+<SCRIPT LANGUAGE="JavaScript">
+setTimeout('document.product<%= @product.sku %>.submit()',0);
+</SCRIPT>

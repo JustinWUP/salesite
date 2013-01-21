@@ -4,6 +4,7 @@ Salesite::Application.routes.draw do
 
   match 'products/buy/:id' => 'products#buy', :as => 'buy'
 
+  match 'products/cart/:id' => 'products#cart', :as => 'cart'
 
   root :to => "products#index"
 

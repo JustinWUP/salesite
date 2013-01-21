@@ -2,8 +2,13 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
 
+
+    require "net/http"
+    require "uri"
+
   before_filter :display_sort, :only => [:new, :edit,:create ]
   after_filter :update_sort, :only => [:update, :create]
+
   def index
     @product = Product.first(:order => 'sort asc', :conditions => ["sort != 0 and active = ?", true])
 
@@ -49,7 +54,11 @@ class ProductsController < ApplicationController
       @product.sort = 0
       @product.save
     end
-    redirect_to @product.url
+    redirect_to cart_url(@product)
+  end
+
+  def cart
+    @product = Product.find(params[:id])
   end
 
   # POST /products

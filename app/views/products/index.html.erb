@@ -1,9 +1,10 @@
 <% if @product %>
     <%= @product.title  %><br>
     <%= @product.description %><br>
-    <%= @product.quantity %><br>
-    <%= image_tag(@product.image) %>
+    <%= @product.quantity %> Left!<br>
+    <%= get_image(@product.sku) %><br>
     <%= link_to "Buy!", buy_url(@product) %><br>
+    <%# render 'cart' %>
 <% else %>
     All Sold Out!
 <% end %>
