@@ -49,11 +49,11 @@
 }
 
 #banner {
-
+		display:inline-block;
 }
 
 #product {
-
+	display:inline-block;
 	margin-bottom: 50px;
 }
 
@@ -63,7 +63,6 @@
 
 #productdetails{
 	display: inline-block;
-	margin-left: 15%;
 }
 
 .title {
@@ -119,6 +118,12 @@
 	color: #999;
 }
 
+
+#rules {
+	margin-top:-30px;
+}
+
 .rules {
 	color:#777;
+
 }
