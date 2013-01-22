@@ -1,10 +1,53 @@
-<% if @product %>
-    <%= @product.title  %><br>
-    <%= @product.description %><br>
-    <%= @product.quantity %> Left!<br>
-    <%= get_image(@product.sku) %><br>
-    <%= link_to "Buy!", buy_url(@product) %><br>
-    <%# render 'cart' %>
-<% else %>
-    All Sold Out!
-<% end %>
+<div id="topbar">
+	<div id="logo"><%= image_tag 'logo.png' %></div>
+	<div id="shoppingbag"> <%= link_to image_tag('shoppingbag.png'), "http://www.shoparteffect.com/shoppingbag.asp" %> </div>
+</div>
+<div id="container">
+	<div id="social">
+		Follow Us: 
+		<%= link_to image_tag('twitter.png'), 'http://www.twitter.com/arteffect' %> 
+		<%= link_to image_tag('facebook.png'), 'https://www.facebook.com/shoparteffect' %> 
+		<%= link_to image_tag('pinterest.png'), 'http://www.pinterest.com/arteffect' %> 
+	</div>
+	<div id="banner">
+		<%= image_tag 'banner.png' %>
+	</div>
+	<div id="product">
+	<% if @product %>
+		<div id="productimage">
+			 <%= get_image(@product.sku) %>
+		</div>
+		<div id="productdetails">
+			<div class="title"><%= @product.title  %></div><br>
+	   	 	<div class="rules"><%= @product.description %></div><br>
+	   	 	<div id="price">
+	   	 		<div class="halfprice">
+	   	 			<%= format_price(@product.origprice) %>
+	   	 		</div>
+	   	 		<div class="fullprice smallertitle">
+	   	 			<%= format_price(@product.price) %>
+	   	 		</div>
+	   	 	</div>
+	    	<span class="biggertext">Only</span><span class="smallertitle"> <%= @product.quantity %></span><span class="biggertext"> left! Hurry!<span><br>	<br />
+			<%= link_to image_tag('buynow.png'), buy_url(@product) %><br>
+		</div>
+	<% else %>
+	    All Sold Out!
+	<% end %>
+	</div>
+	<div id="rules">
+		<div class="smallertitle">
+			Rules and Regulations<br><br>
+		</div>
+		<div class="rules">
+			lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum 
+		</div><br>
+	</div>
+</div>
+<div id="footer">
+	&copy; Art Effect. All Rights Reserved. · <span class="justpink">  <%= link_to "Online Policies","http://www.shoparteffect.com/policies.asp" %> </span>  · <span class="justpink">  <%= link_to "About Us","http://www.shoparteffect.com/about.asp" %> </span>  · <span class="justpink">  <%= link_to "Contact Us","http://www.shoparteffect.com/contact.asp" %> </span> <br>
+	<span class="boldstuff">934 West Armitage · Chicago, IL 60614 · 773.929.3600 </span>
+</div>
+
+
+

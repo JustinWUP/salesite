@@ -11,7 +11,6 @@ class ProductsController < ApplicationController
 
   def index
     @product = Product.first(:order => 'sort asc', :conditions => ["sort != 0 and active = ?", true])
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
