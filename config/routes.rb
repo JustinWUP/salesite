@@ -1,10 +1,14 @@
 Salesite::Application.routes.draw do
 
+  devise_for :users
+
   resources :products
 
   match 'products/buy/:id' => 'products#buy', :as => 'buy'
 
   match 'products/cart/:id' => 'products#cart', :as => 'cart'
+
+  match 'dash' => 'products#dash', :as => 'dash'
 
   root :to => "products#index"
 

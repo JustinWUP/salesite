@@ -8,9 +8,18 @@ class ProductsController < ApplicationController
 
   before_filter :display_sort, :only => [:new, :edit,:create ]
   after_filter :update_sort, :only => [:update, :create]
+  before_filter :authenticate_user!, :only => [:new, :edit, :create, :update, :destroy, :dash]
 
   def index
     @product = Product.first(:order => 'sort asc', :conditions => ["sort != 0 and active = ?", true])
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @products }
+    end
+  end
+
+  def dash
+    @products = Product.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
