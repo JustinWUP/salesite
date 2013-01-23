@@ -15,11 +15,13 @@ shoppingbag.png: shoppingbag-8d5e036c24d800dd425d438602f48a1d.png
 shoppingbag/index.png: shoppingbag-8d5e036c24d800dd425d438602f48a1d.png
 sidebanner.png: sidebanner-ef5b4b510902ff7663c39cca99906385.png
 sidebanner/index.png: sidebanner-ef5b4b510902ff7663c39cca99906385.png
+soldout.jpg: soldout-5d2247351dafcb682d0b8500580a383b.jpg
+soldout/index.jpg: soldout-5d2247351dafcb682d0b8500580a383b.jpg
 twitter.png: twitter-186c14b9c5f08b05f3a98a91c308a434.png
 twitter/index.png: twitter-186c14b9c5f08b05f3a98a91c308a434.png
 application.js: application-23e0dc4aeeff30c6e2327681045066a1.js
 application/index.js: application-23e0dc4aeeff30c6e2327681045066a1.js
-application.css: application-255b673b2c7e4ede3b99a1c666b4ddeb.css
-application/index.css: application-255b673b2c7e4ede3b99a1c666b4ddeb.css
+application.css: application-665abe50e561c27316e492de37888356.css
+application/index.css: application-665abe50e561c27316e492de37888356.css
 jquery.min.map: jquery.min-959a5819c76e1508f5a8655c289c0de8.map
 jquery/index.min.map: jquery.min-959a5819c76e1508f5a8655c289c0de8.map
