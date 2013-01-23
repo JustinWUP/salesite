@@ -9,12 +9,20 @@ gem 'thin'
 
 group :development, :test do 
 	gem 'sqlite3'
+<<<<<<< HEAD
+end
+
+group :production do
+	gem 'pg'
+=======
+>>>>>>> e92f636b1a8b67e30d2522ae93fa28d2662b4cab
 end
 
 group :production do
 	gem 'pg'
 end
 
+gem 'devise'
 
 # Gems used only for assets and not required
 # in production environments by default.
