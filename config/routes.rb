@@ -1,5 +1,7 @@
 Salesite::Application.routes.draw do
 
+  match 'users/sign_up' => 'products#index'
+
   devise_for :users
 
   resources :products
@@ -12,7 +14,7 @@ Salesite::Application.routes.draw do
 
   root :to => "products#index"
 
-  match 'users/sign_up' => 'products#index'
+
 
 
   # The priority is based upon order of creation:
