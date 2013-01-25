@@ -1,8 +1,12 @@
 ---
-banner.png: banner-89f46e6550a7756ac6da0b1adde6a6b4.png
-banner/index.png: banner-89f46e6550a7756ac6da0b1adde6a6b4.png
-bigbanner.png: bigbanner-273cd8bbf6a92fcd1dc3ab38278b1ef2.png
-bigbanner/index.png: bigbanner-273cd8bbf6a92fcd1dc3ab38278b1ef2.png
+banner.png: banner-afc4f8d99959ff474677bad582cb6886.png
+banner/index.png: banner-afc4f8d99959ff474677bad582cb6886.png
+banner.png.bak: banner.png-89f46e6550a7756ac6da0b1adde6a6b4.bak
+banner/index.png.bak: banner.png-89f46e6550a7756ac6da0b1adde6a6b4.bak
+bigbanner.png: bigbanner-8e851e4a0d9fc1c9740bbc133fc8cb9f.png
+bigbanner/index.png: bigbanner-8e851e4a0d9fc1c9740bbc133fc8cb9f.png
+bigbanner.png.bak: bigbanner.png-273cd8bbf6a92fcd1dc3ab38278b1ef2.bak
+bigbanner/index.png.bak: bigbanner.png-273cd8bbf6a92fcd1dc3ab38278b1ef2.bak
 buynow.png: buynow-b82a7fa21f8f52cee208d175fc385e80.png
 buynow/index.png: buynow-b82a7fa21f8f52cee208d175fc385e80.png
 facebook.png: facebook-085db560f455607272bd723d1375b744.png
@@ -21,7 +25,7 @@ twitter.png: twitter-186c14b9c5f08b05f3a98a91c308a434.png
 twitter/index.png: twitter-186c14b9c5f08b05f3a98a91c308a434.png
 application.js: application-23e0dc4aeeff30c6e2327681045066a1.js
 application/index.js: application-23e0dc4aeeff30c6e2327681045066a1.js
-application.css: application-255b673b2c7e4ede3b99a1c666b4ddeb.css
-application/index.css: application-255b673b2c7e4ede3b99a1c666b4ddeb.css
+application.css: application-c4c03d02e7b1f03cc75716fc8e44ffb3.css
+application/index.css: application-c4c03d02e7b1f03cc75716fc8e44ffb3.css
 jquery.min.map: jquery.min-959a5819c76e1508f5a8655c289c0de8.map
 jquery/index.min.map: jquery.min-959a5819c76e1508f5a8655c289c0de8.map
