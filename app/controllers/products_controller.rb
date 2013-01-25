@@ -126,15 +126,15 @@ class ProductsController < ApplicationController
     elsif @changed == true
       @conflict = true
     end
-      if @conflict == true
-        @hey = @product.sort
-        @update.each do |u|
-          @hey += 1
-          u.update_column(:sort, @hey)
-          u.save
-        end
+    if @conflict == true
+      @hey = @product.sort
+      @update.each do |u|
+        @hey += 1
+        u.update_column(:sort, @hey)
+        u.save
       end
     end
+  end
     
 end
 
