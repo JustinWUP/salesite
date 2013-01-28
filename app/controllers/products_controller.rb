@@ -121,9 +121,7 @@ class ProductsController < ApplicationController
   def update_sort
     @conflict = false
     @update = Product.where("sort >= ? and id <> ?", @product.sort, @product.id)
-    if Product.find_by_sort(@product.sort) != "[]"
-      @conflict = true
-    elsif @changed == true
+    if Product.find_by_sort(@product.sort) != "[]" && @changed == true
       @conflict = true
     end
     if @conflict == true
