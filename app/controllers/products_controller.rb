@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
   end
 
   def dash
-    @products = Product.all
+    @products = Product.order("sort ASC")
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
