@@ -16,7 +16,7 @@
 		<%= image_tag 'banner.png' %>
 	</div>
 	<div id="product">
-	<% if @product %>
+	<% if @product and @state == false%>
 		<div id="productimage">
 			 <%= get_image(@product.sku) %>
 		</div>
@@ -34,8 +34,10 @@
 	    	<span class="biggertext">Only</span><span class="smallertitle"> <%= @product.quantity %></span><span class="biggertext"> left! Hurry!<span><br>	<br />
 			<%= link_to image_tag('buynow.png'), buy_url(@product) %><br>
 		</div>
-	<% else %>
+	<% elsif !@product && @state == false %>
 	    <%= link_to image_tag('soldout.jpg'), "http://www.shoparteffect.com/Gifts-Sale" %><br><br><br><br>
+	<% elsif @state == true %>
+		    <%= link_to image_tag('saleover.jpg'), "http://www.shoparteffect.com" %><br><br><br><br>
 	<% end %>
 	</div>
 	<div id="rules">

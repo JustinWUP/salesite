@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130123194950) do
+ActiveRecord::Schema.define(:version => 20130201193433) do
 
   create_table "products", :force => true do |t|
     t.string   "title"
@@ -25,6 +25,11 @@ ActiveRecord::Schema.define(:version => 20130123194950) do
     t.string   "url"
     t.integer  "quantity"
     t.string   "origprice"
+  end
+
+  create_table "settings", :force => true do |t|
+    t.string  "title"
+    t.boolean "onstate"
   end
 
   create_table "users", :force => true do |t|

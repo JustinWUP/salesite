@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
     require "uri"
 
   before_filter :display_sort, :only => [:new, :edit,:create ]
+  before_filter :openstate, :only => [:index, :dash]
   after_filter :update_sort, :only => [:update, :create]
   before_filter :authenticate_user!, :only => [:new, :edit, :create, :update, :destroy, :dash]
 
@@ -132,6 +133,11 @@ class ProductsController < ApplicationController
         u.save
       end
     end
+  end
+
+  def openstate
+    @openstate = Setting.find_by_title('openstate')
+    @state = @openstate.onstate
   end
     
 end

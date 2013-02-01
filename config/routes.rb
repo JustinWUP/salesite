@@ -5,6 +5,7 @@ Salesite::Application.routes.draw do
   devise_for :users
 
   resources :products
+  resources :settings
 
   match 'products/buy/:id' => 'products#buy', :as => 'buy'
 
